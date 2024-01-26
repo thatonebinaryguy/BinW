@@ -1,0 +1,226 @@
+<html>
+    <body>
+        <div class="nav">
+            <a class="active" href="index.html">BinW</a>
+            <a href="binaryimages.html">Binary Images</a>
+            <a href="binarydocs.html">First 1000 Binary Digits</a>
+            <a href="binaryalphanum.html">Alphanumerical in Binary</a>
+            <a href="test.html">Experimental</a>
+        </div>
+        <p></p>
+        <button class="squares" id="square1" onclick="squarecolor(document.getElementById('square1').id)" style="background-color: white">0</button>
+        <button class="squares" id="square2" onclick="squarecolor(document.getElementById('square2').id)" style="background-color: white">0</button>
+        <button class="squares" id="square3" onclick="squarecolor(document.getElementById('square3').id)" style="background-color: white">0</button>
+        <button class="squares" id="square4" onclick="squarecolor(document.getElementById('square4').id)" style="background-color: white">0</button>
+        <button class="squares" id="square5" onclick="squarecolor(document.getElementById('square5').id)" style="background-color: white">0</button>
+        <p></p>
+        <button class="squares" id="square6" onclick="squarecolor(document.getElementById('square6').id)" style="background-color: white">0</button>
+        <button class="squares" id="square7" onclick="squarecolor(document.getElementById('square7').id)" style="background-color: white">0</button>
+        <button class="squares" id="square8" onclick="squarecolor(document.getElementById('square8').id)" style="background-color: white">0</button>
+        <button class="squares" id="square9" onclick="squarecolor(document.getElementById('square9').id)" style="background-color: white">0</button>
+        <button class="squares" id="square10" onclick="squarecolor(document.getElementById('square10').id)" style="background-color: white">0</button>
+        <p></p>
+        <button class="squares" id="square11" onclick="squarecolor(document.getElementById('square11').id)" style="background-color: white">0</button>
+        <button class="squares" id="square12" onclick="squarecolor(document.getElementById('square12').id)" style="background-color: white">0</button>
+        <button class="squares" id="square13" onclick="squarecolor(document.getElementById('square13').id)" style="background-color: white">0</button>
+        <button class="squares" id="square14" onclick="squarecolor(document.getElementById('square14').id)" style="background-color: white">0</button>
+        <button class="squares" id="square15" onclick="squarecolor(document.getElementById('square15').id)" style="background-color: white">0</button>
+        <p></p>
+        <button class="squares" id="square16" onclick="squarecolor(document.getElementById('square16').id)" style="background-color: white">0</button>
+        <button class="squares" id="square17" onclick="squarecolor(document.getElementById('square17').id)" style="background-color: white">0</button>
+        <button class="squares" id="square18" onclick="squarecolor(document.getElementById('square18').id)" style="background-color: white">0</button>
+        <button class="squares" id="square19" onclick="squarecolor(document.getElementById('square19').id)" style="background-color: white">0</button>
+        <button class="squares" id="square20" onclick="squarecolor(document.getElementById('square20').id)" style="background-color: white">0</button>
+        <p></p>
+        <button class="squares" id="square21" onclick="squarecolor(document.getElementById('square21').id)" style="background-color: white">0</button>
+        <button class="squares" id="square22" onclick="squarecolor(document.getElementById('square22').id)" style="background-color: white">0</button>
+        <button class="squares" id="square23" onclick="squarecolor(document.getElementById('square23').id)" style="background-color: white">0</button>
+        <button class="squares" id="square24" onclick="squarecolor(document.getElementById('square24').id)" style="background-color: white">0</button>
+        <button class="squares" id="square25" onclick="squarecolor(document.getElementById('square25').id)" style="background-color: white">0</button>
+        <p></p>
+        <input type="text" id="binary" maxlength="25">
+        <button id="getbinary" onclick="getbinary()">Get Binary</button>
+        <button id="setbinary" onclick="setbinary()">Set Binary</button>
+        <p></p>
+        <input onchange="readFile(this)" type="file">
+        <p></p>
+        <script>
+            function readFile(input) {
+                let field = document.getElementById("binary");
+                let file = input.files[0]; 
+                let fileReader = new FileReader(); 
+                fileReader.readAsText(file); 
+                fileReader.onload = function() {
+                    field.value = fileReader.result
+                }; 
+                fileReader.onerror = function() {
+                    alert(fileReader.error);
+                };
+        }
+        </script>
+        <p>Examples</p>
+        <button onclick="smile()">Smiley Face</button>
+        <p></p>
+        <button onclick="X()">X</button>
+        <p></p>
+        <button onclick="cross()">Cross</button>
+    </body>
+    <style>
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function squarecolor(id){
+            var square = document.getElementById(id);
+            if (square.style.backgroundColor!="black"){
+                square.style.backgroundColor = "black";
+                square.style.color = "white";
+                square.innerHTML = "1";
+            }
+            else if (square.style.backgroundColor="black"){
+                square.style.backgroundColor = "white";
+                square.style.color = "black";
+                square.innerHTML = "0";
+            }
+        }
+        function getbinary(){
+            field = document.getElementById("binary");
+            square1:String = document.getElementById("square1");
+            square2:String = document.getElementById("square2");
+            square3:String = document.getElementById("square3");
+            square4:String = document.getElementById("square4");
+            square5:String = document.getElementById("square5");
+            square6:String = document.getElementById("square6");
+            square7:String = document.getElementById("square7");
+            square8:String = document.getElementById("square8");
+            square9:String = document.getElementById("square9");
+            square10:String = document.getElementById("square10");
+            square11:String = document.getElementById("square11");
+            square12:String = document.getElementById("square12");
+            square13:String = document.getElementById("square13");
+            square14:String = document.getElementById("square14");
+            square15:String = document.getElementById("square15");
+            square16:String = document.getElementById("square16");
+            square17:String = document.getElementById("square17");
+            square18:String = document.getElementById("square18");
+            square19:String = document.getElementById("square19");
+            square20:String = document.getElementById("square20");
+            square21:String = document.getElementById("square21");
+            square22:String = document.getElementById("square22");
+            square23:String = document.getElementById("square23");
+            square24:String = document.getElementById("square24");
+            square25:String = document.getElementById("square25");
+            field.value = square1.innerHTML.concat(square2.innerHTML,square3.innerHTML,square4.innerHTML,square5.innerHTML,square6.innerHTML,square7.innerHTML,square8.innerHTML,square9.innerHTML,square10.innerHTML,square11.innerHTML,square12.innerHTML,square13.innerHTML,square14.innerHTML,square15.innerHTML,square16.innerHTML,square17.innerHTML,square18.innerHTML,square19.innerHTML,square20.innerHTML,square21.innerHTML,square22.innerHTML,square23.innerHTML,square24.innerHTML,square25.innerHTML);
+        }
+        function setbinary(){
+            field = document.getElementById("binary");
+            square1:String = document.getElementById("square1");
+            setbinary2(square1.id);
+            square2:String = document.getElementById("square2");
+            setbinary2(square2.id);
+            square3:String = document.getElementById("square3");
+            setbinary2(square3.id);
+            square4:String = document.getElementById("square4");
+            setbinary2(square4.id);
+            square5:String = document.getElementById("square5");
+            setbinary2(square5.id);
+            square6:String = document.getElementById("square6");
+            setbinary2(square6.id);
+            square7:String = document.getElementById("square7");
+            setbinary2(square7.id);
+            square8:String = document.getElementById("square8");
+            setbinary2(square8.id);
+            square9:String = document.getElementById("square9");
+            setbinary2(square9.id);
+            square10:String = document.getElementById("square10");
+            setbinary2(square10.id);
+            square11:String = document.getElementById("square11");
+            setbinary2(square11.id);
+            square12:String = document.getElementById("square12");
+            setbinary2(square12.id);
+            square13:String = document.getElementById("square13");
+            setbinary2(square13.id);
+            square14:String = document.getElementById("square14");
+            setbinary2(square14.id);
+            square15:String = document.getElementById("square15");
+            setbinary2(square15.id);
+            square16:String = document.getElementById("square16");
+            setbinary2(square16.id);
+            square17:String = document.getElementById("square17");
+            setbinary2(square17.id);
+            square18:String = document.getElementById("square18");
+            setbinary2(square18.id);
+            square19:String = document.getElementById("square19");
+            setbinary2(square19.id);
+            square20:String = document.getElementById("square20");
+            setbinary2(square20.id);
+            square21:String = document.getElementById("square21");
+            setbinary2(square21.id);
+            square22:String = document.getElementById("square22");
+            setbinary2(square22.id);
+            square23:String = document.getElementById("square23");
+            setbinary2(square23.id);
+            square24:String = document.getElementById("square24");
+            setbinary2(square24.id);
+            square25:String = document.getElementById("square25");
+            setbinary2(square25.id);
+            clearset();
+        }
+        i = 0;
+        count = 0;
+        function setbinary2(square){
+            id = document.getElementById(square);
+            if (field.value[count] == 1){
+                id.innerHTML = "1";
+                id.style.backgroundColor="black";
+                id.style.color="white";
+            }
+            else{
+                id.innerHTML = "0";
+                id.style.backgroundColor="white";
+                id.style.color="black";
+            }
+            count=count+1;
+        }
+        function clearset(){
+            i = 0;
+            count = 0;
+        }
+        function smile(){
+            let field = document.getElementById("binary");
+            field.value = "0101001010000001000101110";
+            setbinary();
+        }
+        function X(){
+            let field = document.getElementById("binary");
+            field.value = "1000101010001000101010001";
+            setbinary();
+        }
+        function cross(){
+            let field = document.getElementById("binary");
+            field.value = "0010001110001000010000100";
+            setbinary();
+        }
+    </script>
+    <style>
+        .nav{
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .nav .active{
+        font-size: 30px;
+        }
+    </style>
+</html>
