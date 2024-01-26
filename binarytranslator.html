@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+  <body>  
+    <div class="nav">
+      <a class="active" href="index.html">BinW</a>
+      <a href="binaryimages.html">Binary Images</a>
+      <a href="binarydocs.html">First 1000 Binary Digits</a>
+      <a href="binaryalphanum.html">Alphanumerical in Binary</a>
+      <a href="binarytranslator.html">Binary translator</a>
+      <a href="test.html">Experimental</a>
+    </div>
+    <p>Number / Alphanumerical to Binary</p>
+    <input id="Input">
+    <input id="Output">
+    <button onclick="checkforletters(document.getElementById('Input'), document.getElementById('Output'))">Translate</button>
+    <p>If you input letters, it will automatically be translated to Alphanumerical, so mixing numbers and letters is not recommeneded.</p>
+    <p>Binary to Number</p>
+    <input id="Input2">
+    <input id="Output2">
+    <button onclick="translate2(document.getElementById('Input2'), document.getElementById('Output2'))">Translate</button>
+    <p>Alphanumerical Binary to Text</p>
+    <input id="Input3">
+    <input id="Output3">
+    <button onclick="translate3(document.getElementById('Input3'), document.getElementById('Output3'))">Translate</button>
+    <p>For binary to number and Alphanumerical binary to text, the binary string must have a space at the end. I have no clue why, but it wont let me detect if its at the end of the binary string.</p>
+  </body>
+  <style>
+    .nav{
+        background-color: #333;
+        overflow: hidden;
+    }
+    .nav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    #header{
+      font-size: xx-large;
+      text-align: center;
+    }
+    .nav .active{
+        font-size: 30px;
+    }
+</style>
+<script>
+    const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    const numberlist = ["1","2","3","4","5","6","7","8","9"];
+    const Alphanumerical = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
+    function checkforletters(input, output){
+        console.log("clear output")
+        output.value = "";
+        console.log("succesfully cleared output, start translate");
+        console.log(`Input field has length of ${input.value.length}`)
+        for (let count = 0; count < input.value.length; count++){
+                if (alphabet.includes(input.value[count].toLowerCase())){
+                    console.log(`Character at ${count+1} is a letter and is ${input.value[count].toLowerCase()}`);
+                }else if(input.value[count] == " "){
+                    console.log(`Character at ${count+1} is a space`)
+                }else if(numberlist.includes(input.value[count])){
+                    console.log(`Character at ${count+1} is a number and is ${input.value[count]}`);
+                }
+                translate(input, output, count);
+        }
+        console.log("translated");
+    }
+    function translate(input, output, count){
+        if (alphabet.includes(input.value[count].toLowerCase())){
+            letteris = alphabet.indexOf(input.value[count].toLowerCase());
+            alphanumis = Alphanumerical[letteris];
+            output.value += alphanumis.toString(2);
+            output.value += " ";
+        }else if(numberlist.includes(input.value[count])){
+            numis = numberlist.indexOf(input.value[count])+1;
+            output.value += numis.toString(2);
+            console.log(numis);
+        }else if(input.value[count] == " "){
+            output.value+= "/";
+        }
+    }
+    function translate2(input2,output2){
+        binarystr = "";
+        finalstr = "";
+        for (let i = 0; i<input2.value.length; i++){
+            if (input2.value[i] == "1"){
+                binarystr += "1";
+                console.log("added 1");
+            }else if (input2.value[i] == "0"){
+                binarystr += "0";
+                console.log("added 0");
+            }else if (input2.value[i] == "/"){
+                finalstr+=" ";
+                binarystr = "";
+            }else if (input2.value[i] == " "){
+                finalstr+=parseInt(binarystr, 2);
+                binarystr = "";
+            }
+            console.log(binarystr);
+        }
+        console.log(finalstr);
+        output2.value=finalstr;
+    }
+    function translate3(input3,output3){
+        binarystr = "";
+        finalstr = "";
+        for (let i = 0; i<input3.value.length; i++){
+            if (input3.value[i] == "1"){
+                binarystr += "1";
+                console.log("added 1");
+            }else if (input3.value[i] == "0"){
+                binarystr += "0";
+                console.log("added 0");
+            }else if (input3.value[i] == "/"){
+                finalstr+=" ";
+                binarystr = "";
+            }else if (input3.value[i] == " "){
+                finalstr+=alphabet[parseInt(binarystr, 2)-1];
+                binarystr = "";
+            }
+            console.log(binarystr);
+        }
+        output3.value=finalstr;
+    }
+</script>
+</html>
