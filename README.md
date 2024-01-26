@@ -23,3 +23,6 @@ Fourth, open the BinW folder, and double click on index.html, this will bring yo
 ## How to Change Directories
 If you're on windows, type into your terminal ```cd [Directory]``` you can find the directory by going to the windows file manager, clicking on the bar that says the directory. Note: Only copy the part after ```C:\User\[Your Username\``` not doing this will result in an error.
 If you're on linux, type into your terminal ```cd [Directory]``` your terminal will always start in your home, next type in the directory you want, excluding home.
+
+## Warning for users using TailsOS
+Tor browser cannot read from your persistent folder, only the files app and terminal can, but, Tor browser CAN read the Persistent Tor Browser folder, so on install do not go to the Persistent, but go to the Persistent and then the Tor browser folder.
